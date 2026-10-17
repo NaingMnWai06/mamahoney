@@ -1,0 +1,460 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For My Baby Gurl</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Great+Vibes&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #100b0b;
+    color: #f0dfc0;
+    font-family: 'Cormorant Garamond', serif;
+    text-align: center;
+    overflow-x: hidden;
+}
+
+/* Background */
+
+.hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 20px;
+    background:
+        radial-gradient(circle, #51252a 0%, #261316 45%, #100b0b 80%);
+    position: relative;
+}
+
+.top {
+    font-size: 11px;
+    letter-spacing: 6px;
+    color: #d6b879;
+    animation: appear 2s ease;
+}
+
+h1 {
+    font-size: clamp(55px, 10vw, 100px);
+    font-weight: 400;
+    margin: 25px 0;
+    animation: appear 2s ease;
+}
+
+h1 span {
+    font-family: 'Great Vibes', cursive;
+    color: #e2c18a;
+}
+
+.subtitle {
+    font-size: 21px;
+    font-style: italic;
+    color: #ddc9b9;
+}
+
+.heart {
+    font-size: 35px;
+    color: #d6b879;
+    margin-top: 35px;
+    animation: beat 1.5s infinite;
+}
+
+.scroll {
+    margin-top: 60px;
+    color: #c8a66c;
+    font-size: 12px;
+    letter-spacing: 4px;
+}
+
+/* Floating hearts */
+
+.floating span {
+    position: fixed;
+    bottom: -50px;
+    color: #b85d62;
+    font-size: 24px;
+    opacity: 0;
+    pointer-events: none;
+    animation: float 12s linear infinite;
+    z-index: 5;
+}
+
+.floating span:nth-child(1) {
+    left: 10%;
+    animation-delay: 0s;
+}
+
+.floating span:nth-child(2) {
+    left: 30%;
+    animation-delay: 4s;
+}
+
+.floating span:nth-child(3) {
+    left: 50%;
+    animation-delay: 2s;
+}
+
+.floating span:nth-child(4) {
+    left: 70%;
+    animation-delay: 6s;
+}
+
+.floating span:nth-child(5) {
+    left: 90%;
+    animation-delay: 3s;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0) rotate(0);
+        opacity: 0;
+    }
+    20% { opacity: .7; }
+    80% { opacity: .5; }
+    100% {
+        transform: translateY(-110vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+@keyframes beat {
+    50% { transform: scale(1.25); }
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Photo section */
+
+.photo-section {
+    padding: 100px 20px;
+}
+
+.section-title {
+    font-family: 'Great Vibes', cursive;
+    font-size: 48px;
+    font-weight: 400;
+    color: #e2c18a;
+    margin-bottom: 40px;
+}
+
+.photo-frame {
+    width: min(320px, 85vw);
+    height: 400px;
+    padding: 10px;
+    margin: auto;
+    background: linear-gradient(135deg, #f0d9a5, #805334, #d6b879);
+    transform: rotate(-2deg);
+    box-shadow: 0 0 45px #8b363622;
+    transition: .4s;
+}
+
+.photo-frame:hover {
+    transform: rotate(0deg) scale(1.03);
+}
+
+.photo-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border: 2px solid #4a2920;
+}
+
+.caption {
+    margin-top: 30px;
+    font-size: 21px;
+    font-style: italic;
+    color: #d6b879;
+}
+
+/* Love letter */
+
+.letter-section {
+    padding: 70px 20px 100px;
+}
+
+.letter {
+    max-width: 700px;
+    margin: auto;
+    padding: 55px 40px;
+    background: #eee0c6;
+    color: #38201d;
+    text-align: left;
+    box-shadow: 0 0 60px #00000055;
+}
+
+.letter-label {
+    text-align: center;
+    font-size: 11px;
+    letter-spacing: 4px;
+    color: #936a40;
+}
+
+.letter h2 {
+    font-family: 'Great Vibes', cursive;
+    font-size: 48px;
+    font-weight: 400;
+    margin: 35px 0 20px;
+}
+
+.letter p {
+    font-size: 19px;
+    line-height: 1.9;
+    margin-bottom: 20px;
+}
+
+.letter .highlight {
+    text-align: center;
+    font-style: italic;
+    color: #843b42;
+    margin-top: 30px;
+}
+
+.signature {
+    text-align: right;
+    margin-top: 40px;
+    font-size: 18px;
+}
+
+.signature span {
+    display: block;
+    font-family: 'Great Vibes', cursive;
+    font-size: 38px;
+    color: #843b42;
+    margin-top: 8px;
+}
+
+/* Promises */
+
+.promises {
+    padding: 80px 20px 100px;
+    background: #171010;
+}
+
+.promise-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 45px;
+}
+
+.promise-card {
+    width: 220px;
+    padding: 30px 20px;
+    border: 1px solid #75513c;
+    transition: .3s;
+}
+
+.promise-card:hover {
+    transform: translateY(-8px);
+    border-color: #e2c18a;
+    background: #291619;
+}
+
+.promise-card .icon {
+    font-size: 32px;
+    color: #d6b879;
+}
+
+.promise-card h3 {
+    font-size: 24px;
+    font-weight: 500;
+    margin: 15px 0;
+}
+
+.promise-card p {
+    font-size: 17px;
+    color: #c8b6a4;
+}
+
+/* Ending */
+
+.ending {
+    padding: 100px 20px;
+    background: linear-gradient(#171010, #431c23);
+}
+
+.ending p {
+    font-size: 21px;
+    line-height: 1.9;
+    font-style: italic;
+}
+
+.ending h2 {
+    font-family: 'Great Vibes', cursive;
+    font-size: clamp(45px, 8vw, 75px);
+    font-weight: 400;
+    color: #e2c18a;
+    margin: 25px 0;
+}
+
+footer {
+    padding: 25px;
+    background: #100b0b;
+    color: #bca078;
+    font-style: italic;
+}
+
+@media (max-width: 600px) {
+    .letter {
+        padding: 40px 25px;
+    }
+
+    .letter p {
+        font-size: 17px;
+    }
+
+    .photo-frame {
+        height: 360px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="floating">
+    <span>♥</span>
+    <span>♡</span>
+    <span>♥</span>
+    <span>♡</span>
+    <span>♥</span>
+</div>
+
+<header class="hero">
+    <p class="top">A LITTLE PIECE OF MY HEART</p>
+
+    <h1>For My <span>Baby</span></h1>
+
+    <p class="subtitle">
+        To the girl who makes my world beautiful.
+    </p>
+
+    <div class="heart">♥</div>
+
+    <p class="scroll">A LOVE LETTER FOR YOU</p>
+</header>
+
+<section class="photo-section">
+    <h2 class="section-title">My Favorite Person</h2>
+
+    <div class="photo-frame">
+        <img src="foto/photo_2026-10-18_02-04-55.jpg" alt="My beautiful girl">
+    </div>
+
+    <p class="caption">
+        "My favorite place is wherever you are."
+    </p>
+</section>
+
+<section class="letter-section">
+    <div class="letter">
+
+        <p class="letter-label">
+            ✦ WORDS FROM MY HEART ✦
+        </p>
+
+        <h2>Hay gurl HONEY,</h2>
+
+        <p>
+            If I could give you one thing in this world,
+            I would give you the ability to see yourself
+            through my eyes. Only then would you understand
+            how special you truly are to me.
+        </p>
+
+        <p>
+            You are the peace in my chaos, the warmth
+            in my coldest days, and the sweetest thought
+            that stays in my mind before I fall asleep.
+        </p>
+
+        <p>
+            I know that life will not always be easy.
+            There may be difficult days, misunderstandings,
+            and moments when words are not enough.
+            But I want you to know that I will keep trying,
+            keep learning, and keep choosing you.
+        </p>
+
+        <p>
+            I want to celebrate your little victories,
+            comfort you when you feel tired, listen to
+            your stories, and stand beside you while
+            you chase all the dreams in your heart.
+        </p>
+
+        <p class="highlight">
+            "In every lifetime, I hope I find you again."
+        </p>
+
+        <div class="signature">
+            Forever yours,
+            <span>Yours♥</span>
+        </div>
+
+    </div>
+</section>
+
+<section class="promises">
+    <h2 class="section-title">My Promises to You</h2>
+
+    <div class="promise-container">
+
+        <div class="promise-card">
+            <div class="icon">♡</div>
+            <h3>My Love</h3>
+            <p>I will love you through the ordinary days.</p>
+        </div>
+
+        <div class="promise-card">
+            <div class="icon">✧</div>
+            <h3>My Support</h3>
+            <p>I will believe in you and your dreams.</p>
+        </div>
+
+        <div class="promise-card">
+            <div class="icon">♥</div>
+            <h3>My Choice</h3>
+            <p>I will keep choosing you, day after day.</p>
+        </div>
+
+    </div>
+</section>
+
+<section class="ending">
+    <p>Some stories are written in books.</p>
+    <p>Ours is written in my heart.</p>
+
+    <h2>I Love You, Baby ♥</h2>
+
+    <p style="font-size: 11px; letter-spacing: 5px; color: #d6b879;">
+        TODAY, TOMORROW, AND ALWAYS
+    </p>
+</section>
+
+<footer>
+    Made with love, just for you ♡
+</footer>
+
+</body>
+</html>
